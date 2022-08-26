@@ -13,7 +13,6 @@ import com.example.mvvmdemoproject.R
 import com.example.mvvmdemoproject.data.model.TransformResponse
 import com.example.mvvmdemoproject.data.remote.networkboundresource.Status
 import com.example.mvvmdemoproject.databinding.FragmentHomeBinding
-import com.example.mvvmdemoproject.utils.toast
 import com.example.mvvmdemoproject.utils.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
@@ -50,7 +49,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun navigateToProfile(selectedItem: TransformResponse) {
-        toast(selectedItem.name)
         val args = Bundle().apply {
             putParcelable(TRANSFORM_ARGUMENT, selectedItem)
         }
