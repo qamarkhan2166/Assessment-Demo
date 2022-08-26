@@ -1,0 +1,90 @@
+package com.example.mvvmdemoproject.data.model.games
+
+import android.os.Parcelable
+import com.example.mvvmdemoproject.data.model.TransformResponse
+import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class GameDataClass(
+
+    @SerializedName("id") var id: Int? = null,
+    @SerializedName("slug") var slug: String? = null,
+    @SerializedName("name") var name: String? = null,
+    @SerializedName("name_original") var nameOriginal: String? = null,
+    @SerializedName("description") var description: String? = null,
+    @SerializedName("metacritic") var metacritic: Int? = null,
+    @SerializedName("metacritic_platforms") var metacriticPlatforms: ArrayList<MetacriticPlatforms> = arrayListOf(),
+    @SerializedName("released") var released: String? = null,
+    @SerializedName("tba") var tba: Boolean? = null,
+    @SerializedName("updated") var updated: String? = null,
+    @SerializedName("background_image") var backgroundImage: String? = null,
+    @SerializedName("background_image_additional") var backgroundImageAdditional: String? = null,
+    @SerializedName("website") var website: String? = null,
+    @SerializedName("rating") var rating: Double? = null,
+    @SerializedName("rating_top") var ratingTop: Int? = null,
+    @SerializedName("ratings") var ratings: ArrayList<Ratings> = arrayListOf(),
+    // @SerializedName("reactions") var reactions: Reactions? = Reactions(),
+    @SerializedName("added") var added: Int? = null,
+    @SerializedName("added_by_status") var addedByStatus: AddedByStatus? = AddedByStatus(),
+    @SerializedName("playtime") var playtime: Int? = null,
+    @SerializedName("screenshots_count") var screenshotsCount: Int? = null,
+    @SerializedName("movies_count") var moviesCount: Int? = null,
+    @SerializedName("creators_count") var creatorsCount: Int? = null,
+    @SerializedName("achievements_count") var achievementsCount: Int? = null,
+    @SerializedName("parent_achievements_count") var parentAchievementsCount: Int? = null,
+    @SerializedName("reddit_url") var redditUrl: String? = null,
+    @SerializedName("reddit_name") var redditName: String? = null,
+    @SerializedName("reddit_description") var redditDescription: String? = null,
+    @SerializedName("reddit_logo") var redditLogo: String? = null,
+    @SerializedName("reddit_count") var redditCount: Int? = null,
+    @SerializedName("twitch_count") var twitchCount: Int? = null,
+    @SerializedName("youtube_count") var youtubeCount: Int? = null,
+    @SerializedName("reviews_text_count") var reviewsTextCount: Int? = null,
+    @SerializedName("ratings_count") var ratingsCount: Int? = null,
+    @SerializedName("suggestions_count") var suggestionsCount: Int? = null,
+    @SerializedName("alternative_names") var alternativeNames: ArrayList<String> = arrayListOf(),
+    @SerializedName("metacritic_url") var metacriticUrl: String? = null,
+    @SerializedName("parents_count") var parentsCount: Int? = null,
+    @SerializedName("additions_count") var additionsCount: Int? = null,
+    @SerializedName("game_series_count") var gameSeriesCount: Int? = null,
+    @SerializedName("user_game") var userGame: String? = null,
+    @SerializedName("reviews_count") var reviewsCount: Int? = null,
+    @SerializedName("saturated_color") var saturatedColor: String? = null,
+    @SerializedName("dominant_color") var dominantColor: String? = null,
+    @SerializedName("parent_platforms") var parentPlatforms: ArrayList<ParentPlatforms> = arrayListOf(),
+    @SerializedName("platforms") var platforms: ArrayList<Platforms> = arrayListOf(),
+    @SerializedName("stores") var stores: ArrayList<Stores> = arrayListOf(),
+    @SerializedName("developers") var developers: ArrayList<Developers> = arrayListOf(),
+    @SerializedName("genres") var genres: ArrayList<Genres> = arrayListOf(),
+    @SerializedName("tags") var tags: ArrayList<Tags> = arrayListOf(),
+    @SerializedName("publishers") var publishers: ArrayList<Publishers> = arrayListOf(),
+    @SerializedName("esrb_rating") var esrbRating: EsrbRating? = EsrbRating(),
+    @SerializedName("clip") var clip: String? = null,
+    @SerializedName("description_raw") var descriptionRaw: String? = null
+
+) : Parcelable
+
+fun GameDataClass.toViewData() = TransformResponse(
+    added = added ?: 0,
+    background_image = backgroundImage ?: "",
+    description = description ?: "",
+    description_raw = descriptionRaw ?: "",
+    dominant_color = dominantColor ?: "",
+    id = id ?: 0,
+    metacritic = metacritic ?: 0,
+    name = name ?: "",
+    playtime = playtime ?: 0,
+    rating = rating ?: 0.0,
+    rating_top = ratingTop ?: 5,
+    ratings_count = ratingsCount ?: 0,
+    reddit_count = redditCount ?: 0,
+    released = released ?: "",
+    reviews_count = reviewsCount ?: 0,
+    reviews_text_count = reviewsTextCount ?: 0,
+    saturated_color = saturatedColor ?: "",
+    slug = slug ?: "",
+    suggestions_count = suggestionsCount ?: 0,
+    tba = tba ?: false,
+    updated = updated ?: ""
+)
